@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "article_sitri_vault_pydantic"
+version = "0.1.0"
+description = ""
+authors = ["Alexander Lavrov <alexander.lavrov@elastoo.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+sitri = {extras = ["hvac", "pydantic"], version = "^0.10.6"}
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
