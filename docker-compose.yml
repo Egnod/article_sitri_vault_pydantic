@@ -1,0 +1,14 @@
+# docker-compose config for local development
+version: '3'
+services:
+  superapp:
+    command: python3 -m superapp
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./superapp:/superapp
+      - ./config.json:/config.json
+    env_file:
+      - .env.local

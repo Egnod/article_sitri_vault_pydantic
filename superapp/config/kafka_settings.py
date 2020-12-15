@@ -3,7 +3,7 @@ from typing import Any, Dict
 from pydantic import Field
 from sitri.settings.contrib.vault import VaultKVSettings
 
-from superapp.config.provider_config import configurator, provider
+from superapp.config.provider_config import BaseConfig, configurator
 
 
 class KafkaSettings(VaultKVSettings):
@@ -11,7 +11,8 @@ class KafkaSettings(VaultKVSettings):
     brokers: str = Field(...)
     auth_data: Dict[str, Any] = Field(...)
 
-    class Config:
-        provider = provider
+    class Config(BaseConfig):
         default_secret_path = "kafka"
         default_mount_point = f"{configurator.get('app_name')}/common"
+
+        local_mode_path_prefix = "kafka"

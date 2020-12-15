@@ -1,0 +1,33 @@
+{
+    "db":
+    {
+        "host": "testhost",
+        "password": "testpassword",
+        "port": 1234,
+        "user": "testuser"
+    },
+    "faust":
+    {
+        "agents":
+        {
+            "X":
+            {
+                "concurrency": 2,
+                "partitions": 5
+            }
+        },
+        "app_name": "superapp-workers",
+        "default_concurrency": 5,
+        "default_partitions_count": 10
+    },
+    "kafka":
+    {
+        "auth_data":
+        {
+            "password": "testpassword",
+            "username": "testuser"
+        },
+        "brokers": "kafka://test",
+        "mechanism": "SASL_PLAINTEXT"
+    }
+}

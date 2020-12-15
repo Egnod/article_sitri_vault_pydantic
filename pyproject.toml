@@ -6,7 +6,7 @@ authors = ["Alexander Lavrov <alexander.lavrov@elastoo.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-sitri = {extras = ["hvac", "pydantic"], version = "^0.10.9"}
+sitri = {extras = ["hvac", "pydantic"], version = "^0.10.24"}
 
 [tool.poetry.dev-dependencies]
 

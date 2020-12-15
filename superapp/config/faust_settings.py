@@ -3,7 +3,7 @@ from typing import Dict
 from pydantic import BaseModel, Field
 from sitri.settings.contrib.vault import VaultKVSettings
 
-from superapp.config.provider_config import provider
+from superapp.config.provider_config import BaseConfig, provider
 
 
 class AgentConfig(BaseModel):
@@ -19,6 +19,7 @@ class FaustSettings(VaultKVSettings):
         default=None, vault_secret_key="agents_specification"
     )
 
-    class Config:
+    class Config(BaseConfig):
         provider = provider
         default_secret_path = "faust"
+        local_mode_path_prefix = "faust"
